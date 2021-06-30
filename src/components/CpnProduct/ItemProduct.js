@@ -16,7 +16,7 @@ const ItemProduct = props => {
   return (
     <TouchableOpacity
       style={styles.product}
-      onPress={props.navigation.navigate(ScreenTypes.ProductDetail)}>
+      onPress={() => props.navigation.navigate(ScreenTypes.ProductDetail)}>
       <View style={styles.content}>
         <Image style={styles.imgDes} source={props?.item?.image} />
       </View>
