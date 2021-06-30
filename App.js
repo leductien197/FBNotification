@@ -14,7 +14,7 @@ import appReducers from './src/reducers/index';
 
 function App() {
   // const [firstApp, setFirstApp] = useState(true);
-  const dropDownAlertRef = useRef(null);
+  // const dropDownAlertRef = useRef(null);
 
   const store = createStore(appReducers, applyMiddleware(thunk));
 

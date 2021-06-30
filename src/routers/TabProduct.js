@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import * as ScreenTypes from '../navigation/ScreenTypes';
 import Product from '../screens/product/Product';
 import ProductDetail from '../screens/product/ProductDetail';
+import ItemProduct from '../components/CpnProduct/ItemProduct';
 
 const Stack = createStackNavigator();
 export default function TabUser() {

@@ -4,7 +4,7 @@ import ItemProduct from '../../components/CpnProduct/ItemProduct';
 
 const screenWidth = Dimensions.get('window').width;
 const scale = screenWidth / 360;
-const Product = () => {
+const Product = ({navigation}) => {
   const [data, setData] = useState([
     {
       image: require('../../assets/house.png'),
@@ -14,12 +14,37 @@ const Product = () => {
       timeClose: '18:00',
       id: 1,
     },
+    {
+      image: require('../../assets/house.png'),
+      title: 'Study House',
+      position: 'Số 2 Kim Giang',
+      timeOpen: '08:00',
+      timeClose: '18:00',
+      id: 2,
+    },
+    {
+      image: require('../../assets/house.png'),
+      title: 'Study House',
+      position: 'Số 2 Kim Giang',
+      timeOpen: '08:00',
+      timeClose: '18:00',
+      id: 3,
+    },
+    {
+      image: require('../../assets/house.png'),
+      title: 'Study House',
+      position: 'Số 2 Kim Giang',
+      timeOpen: '08:00',
+      timeClose: '18:00',
+      id: 4,
+    },
   ]);
   return (
     <View style={styles.main}>
-      <View>
+      <View style={styles.content}>
         <Text style={styles.txtMain}>All Products</Text>
         <FlatList
+          contentContainerStyle={styles.flatlist}
           showsVerticalScrollIndicator={false}
           data={data}
           keyExtractor={item => item?.id.toString() || Math.random().toString()}
@@ -28,11 +53,7 @@ const Product = () => {
           // ListFooterComponent={_renderFooter}
           renderItem={({item, index}) => {
             return (
-              <ItemProduct
-                item={item}
-                index={index}
-                // navigation={navigation}
-              />
+              <ItemProduct item={item} index={index} navigation={navigation} />
             );
           }}
         />
@@ -48,10 +69,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10 * scale,
+  },
   txtMain: {
     fontWeight: '500',
     fontSize: 20 * scale,
     marginTop: 20 * scale,
     color: 'black',
+  },
+  flatlist: {
+    marginTop: 10 * scale,
   },
 });

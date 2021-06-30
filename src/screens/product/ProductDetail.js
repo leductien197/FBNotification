@@ -1,13 +1,19 @@
 import React from 'react';
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
+import * as ScreenTypes from '../../navigation/ScreenTypes';
 
 const screenWidth = Dimensions.get('window').width;
 const scale = screenWidth / 360;
-const ProductDetail = () => {
+const ProductDetail = props => {
+  // console.log('props', props);
   return (
     <View style={styles.main}>
       <View style={styles.container}>
-        <Text style={styles.txtDetail}>Detail Products</Text>
+        <Text
+          style={styles.txtDetail}
+          onPress={props.navigation.navigate(ScreenTypes.Product)}>
+          Detail Products
+        </Text>
       </View>
     </View>
   );
