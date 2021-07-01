@@ -11,8 +11,7 @@ const ProductDetail = props => {
       <View style={styles.container}>
         <Text
           style={styles.txtDetail}
-          // onPress={() => props.navigation.navigate(ScreenTypes.Product)}
-        >
+          onPress={() => props.navigation.goBack()}>
           Detail Products
         </Text>
       </View>
