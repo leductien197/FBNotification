@@ -1,7 +1,10 @@
 import PushNotification from 'react-native-push-notification';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import {Platform} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import * as ScreenTypes from '../navigation/ScreenTypes';
 
+// const navigation = useNavigation();
 class LocalNotificationService {
   configure = onOpenNotification => {
     PushNotification.configure({
@@ -13,6 +16,7 @@ class LocalNotificationService {
         if (!notification?.data) {
           return;
         }
+        // navigation.push(ScreenTypes.ProductDetail);
         notification.userInteraction = true;
         onOpenNotification(
           Platform.OS === 'ios' ? notification.data.item : notification.data,

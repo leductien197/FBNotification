@@ -61,5 +61,6 @@
   XCTAssertTrue(foundElement, @"Couldn't find element with text '%@' in %d seconds", TEXT_TO_LOOK_FOR, TIMEOUT_SECONDS);
 }
 
+// if (@([RCTConvert BOOL:@([[UIApplication sharedApplication] isRegisteredForRemoteNotifications])]) == NO)
 
 @end

@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 // import {navigationRef} from '../navigation/NavigationService';
 import Main from './Main';
 // import Splash from '../screens/auth/Splash';
+// import AppPJ from '../../App';
 
 import * as ScreenTypes from '../navigation/ScreenTypes';
 
@@ -40,6 +41,7 @@ function MainStackScreen() {
   return (
     <Stack.Navigator headerMode="none" initialRouteName={ScreenTypes.Main}>
       <Stack.Screen name={ScreenTypes.Main} component={Main} />
+      {/* <Stack.Screen name={'AppPJ'} component={AppPJ} /> */}
     </Stack.Navigator>
   );
 }

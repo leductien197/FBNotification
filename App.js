@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useEffect, useRef, useState} from 'react';
 import NetInfo from '@react-native-community/netinfo';
-import {View, Dimensions, Text} from 'react-native';
+import {View, Dimensions, Text, Linking} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import DropdownAlert from 'react-native-dropdownalert';
 import {fcmService} from './src/services/FCMService';
@@ -11,11 +11,9 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import appReducers from './src/reducers/index';
+import * as ScreenTypes from './src/navigation/ScreenTypes';
 
 function App() {
-  // const [firstApp, setFirstApp] = useState(true);
-  // const dropDownAlertRef = useRef(null);
-
   const store = createStore(appReducers, applyMiddleware(thunk));
 
   useEffect(() => {

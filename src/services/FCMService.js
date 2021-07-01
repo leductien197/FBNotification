@@ -2,6 +2,8 @@
 
 import messaging from '@react-native-firebase/messaging';
 import {Platform} from 'react-native';
+import * as ScreenTypes from '../navigation/ScreenTypes';
+import {useNavigation} from '@react-navigation/native';
 
 class FCMService {
   register = (onRegister, onNotification, onOpenNotification) => {
