@@ -17,7 +17,7 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 function HeadlessCheck({isHeadless}) {
   if (isHeadless) {
-    // App has been launched in the background by iOS, ignore
+    // App has been launched in the background by iOS, ignoregit
     return null;
   }
 
