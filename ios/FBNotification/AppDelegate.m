@@ -72,7 +72,6 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 }
 
-
 // Required for the register event.
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {

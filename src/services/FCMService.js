@@ -1,3 +1,5 @@
+// Khai báo, đăng kí, kiểm tra quyền
+
 import messaging from '@react-native-firebase/messaging';
 import {Platform} from 'react-native';
 
@@ -19,7 +21,6 @@ class FCMService {
   };
 
   checkPermission = onRegister => {
-    console.log('1');
     messaging()
       .hasPermission()
       .then(enabled => {

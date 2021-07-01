@@ -24,7 +24,7 @@ const ItemProduct = props => {
       <Text style={styles.time}>{props?.item?.position}</Text>
       <Text style={styles.time}>Start: {props?.item?.timeOpen}</Text>
       <Text style={styles.time}>Close: {props?.item?.timeClose}</Text>
-      <Text style={styles.time}>08:00 - 17:00</Text>
+      <Text style={styles.time}>Monday-Saturday</Text>
     </TouchableOpacity>
   );
 };
