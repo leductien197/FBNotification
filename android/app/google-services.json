@@ -1,42 +1,49 @@
 {
   "project_info": {
-    "project_number": "848835155678",
-    "project_id": "fbnotification-b9f9d",
-    "storage_bucket": "fbnotification-b9f9d.appspot.com"
+    "project_number": "316373326911",
+    "project_id": "fbnotificationv7",
+    "storage_bucket": "fbnotificationv7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:848835155678:android:ae96b744f4413cd652144f",
+        "mobilesdk_app_id": "1:316373326911:android:0b52388373e4c18196ac8a",
         "android_client_info": {
-          "package_name": "com.fbnotification"
+          "package_name": "vn.windsoft.demonotification"
         }
       },
       "oauth_client": [
         {
-          "client_id": "848835155678-7u16npd8a4c5io1upgklk9g18b5jfob1.apps.googleusercontent.com",
+          "client_id": "316373326911-uigv6cta0vhgg0hfeo07ce24i56f4idn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.fbnotification",
+            "package_name": "vn.windsoft.demonotification",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
-          "client_id": "848835155678-p8nrb4e2j29gp86tj825k3h5oqj454kh.apps.googleusercontent.com",
+          "client_id": "316373326911-3fkns0r7ulsgca8mj2uuckauikohm0sv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4T4L2-RiAsemXLdOpjEswH1srZKaMxdQ"
+          "current_key": "AIzaSyDMNtuILQkhA8eISxE7-2cXFGSgnsy2exE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "848835155678-p8nrb4e2j29gp86tj825k3h5oqj454kh.apps.googleusercontent.com",
+              "client_id": "316373326911-3fkns0r7ulsgca8mj2uuckauikohm0sv.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "316373326911-ophalojie7bt9pnuehvfuo604vi05phb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.windsoft.demonotification"
+              }
             }
           ]
         }

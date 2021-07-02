@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>848835155678-j9o0bo8euj9urgrr2fsu0eonqpj03rgn.apps.googleusercontent.com</string>
+	<string>316373326911-ophalojie7bt9pnuehvfuo604vi05phb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.848835155678-j9o0bo8euj9urgrr2fsu0eonqpj03rgn</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>848835155678-7u16npd8a4c5io1upgklk9g18b5jfob1.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.316373326911-ophalojie7bt9pnuehvfuo604vi05phb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA8zwFK633xlnSn53KT_sfze8TK-ljnF0g</string>
+	<string>AIzaSyAsrffvFsbiXPDYhq_E9dkvZjsVn2FGLgg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>848835155678</string>
+	<string>316373326911</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.fbnotification</string>
+	<string>vn.windsoft.demonotification</string>
 	<key>PROJECT_ID</key>
-	<string>fbnotification-b9f9d</string>
+	<string>fbnotificationv7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fbnotification-b9f9d.appspot.com</string>
+	<string>fbnotificationv7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:848835155678:ios:48960a1116f3284652144f</string>
+	<string>1:316373326911:ios:478764d549673de096ac8a</string>
 </dict>
 </plist>

@@ -15,10 +15,12 @@ class FCMService {
     );
   };
 
+  // ham nay o V7 dang khong can thiet
   registerAppWithFCM = async () => {
     if (Platform.OS === 'ios') {
-      await messaging().registerDeviceForRemoteMessages();
-      await messaging().setAutoInitEnabled(true);
+      console.log('ios auto register FCM');
+      // await messaging().registerDeviceForRemoteMessages();
+      // await messaging().setAutoInitEnabled(true);
     }
   };
 
@@ -130,7 +132,7 @@ class FCMService {
   };
 
   unRegister = () => {
-    this.messageListener();
+    this.messageListener;
   };
 }
 

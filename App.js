@@ -12,8 +12,11 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import appReducers from './src/reducers/index';
 import * as ScreenTypes from './src/navigation/ScreenTypes';
+// import {NavigationContainer} from '@react-navigation/native';
+// import * as RootNavigation from './src/navigation/RootNavigation';
 
 function App() {
+  // const navigation = useNavigation();
   const store = createStore(appReducers, applyMiddleware(thunk));
 
   useEffect(() => {
@@ -44,6 +47,9 @@ function App() {
 
     function onOpenNotification(notify) {
       console.log('[App] onOpenNotification: ', notify);
+      // onRemoteNotification();
+      // RootNavigation.push(ScreenTypes.ProductDetail);
+
       alert('Open Notification: ' + notify.body);
     }
 
