@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.fbnotification"
+        applicationId "vn.windsoft.demonotification"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

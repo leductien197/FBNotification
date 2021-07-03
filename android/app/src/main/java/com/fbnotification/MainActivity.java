@@ -1,4 +1,4 @@
-package com.fbnotification;
+package vn.windsoft.demonotification;
 
 import com.facebook.react.ReactActivity;
 
