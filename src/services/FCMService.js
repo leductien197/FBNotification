@@ -3,7 +3,7 @@
 import messaging from '@react-native-firebase/messaging';
 import {Platform} from 'react-native';
 import * as ScreenTypes from '../navigation/ScreenTypes';
-import {useNavigation} from '@react-navigation/native';
+import * as RootNavigation from '../navigation/RootNavigation';
 
 class FCMService {
   register = (onRegister, onNotification, onOpenNotification) => {
@@ -81,6 +81,7 @@ class FCMService {
     onNotification,
     onOpenNotification,
   ) => {
+    console.log('messaging', messaging);
     // When the application is running, but in the background
     messaging().onNotificationOpenedApp(remoteMessage => {
       console.log(
@@ -106,6 +107,7 @@ class FCMService {
         if (remoteMessage) {
           const notification = remoteMessage.notification;
           onOpenNotification(notification);
+          // RootNavigation.push(ScreenTypes.ProductDetail);
           //  this.removeDeliveredNotification(notification.notificationId)
         }
       });

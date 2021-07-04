@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import {useSelector, useDispatch} from 'react-redux';
-// import {navigationRef} from '../navigation/NavigationService';
+import {navigationRef} from '../navigation/RootNavigation';
 import Main from './Main';
 // import Splash from '../screens/auth/Splash';
 // import AppPJ from '../../App';
@@ -18,7 +18,7 @@ function App() {
   //   const auth = useSelector(state => state.auth);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="ModalStack" component={ModalStack} />
       </Stack.Navigator>
