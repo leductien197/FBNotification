@@ -118,7 +118,9 @@ class FCMService {
         if (Platform.OS === 'ios') {
           notification = remoteMessage.notification;
           onNotification(notification);
-          // onOpenNotification(notification);
+          // if (onOpenNotification) {
+          //   onOpenNotification(notification);
+          // }
         } else {
           notification = remoteMessage.notification;
           onNotification(notification);

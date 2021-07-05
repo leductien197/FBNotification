@@ -46,10 +46,11 @@ function App() {
     }
 
     function onOpenNotification(notify) {
-      console.log('[App] onOpenNotification: ', notify);
-      // onRemoteNotification();
-      RootNavigation.push(ScreenTypes.ProductDetail);
-      alert('Open Notification: ' + notify.body);
+      if (notify !== undefined) {
+        console.log('[App] onOpenNotification: ', notify);
+        RootNavigation.push(ScreenTypes.ProductDetail);
+        alert('Open Notification: ' + notify.body);
+      }
     }
 
     return () => {
