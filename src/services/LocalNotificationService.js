@@ -6,7 +6,7 @@ import * as ScreenTypes from '../navigation/ScreenTypes';
 
 // const navigation = useNavigation();
 class LocalNotificationService {
-  configure = onOpenNotification => {
+  configure = (onRegister, onNotification, onOpenNotification) => {
     PushNotification.configure({
       onRegister: function (token) {
         console.log('[LocalNotificationService] onRegister:', token);
@@ -16,8 +16,22 @@ class LocalNotificationService {
         if (!notification?.data) {
           return;
         }
+
+        if (Platform.OS === 'ios') {
+          if (notification.data.onOpenedInForeGround) {
+            notification.userInteraction = true;
+          }
+        } else {
+          notification.userInteraction = true;
+        }
+
+        if (notification.userInteraction) {
+          onOpenNotification(notification);
+        } else {
+          this.onNotification(notification);
+        }
         // navigation.push(ScreenTypes.ProductDetail);
-        notification.userInteraction = true;
+        // notification.userInteraction = true;
         onOpenNotification(
           Platform.OS === 'ios' ? notification.data.item : notification.data,
         );

@@ -22,7 +22,11 @@ function App() {
   useEffect(() => {
     fcmService.registerAppWithFCM();
     fcmService.register(onRegister, onNotification, onOpenNotification);
-    localNotificationService.configure(onOpenNotification);
+    localNotificationService.configure(
+      onRegister,
+      onNotification,
+      onOpenNotification,
+    );
 
     function onRegister(token) {
       console.log('[App] onRegister: ', token);
@@ -36,20 +40,21 @@ function App() {
         // largeIcon: 'ic_launcher', // add icon large for Android (Link: app/src/main/mipmap)
         // smallIcon: 'ic_launcher' // add icon small for Android (Link: app/src/main/mipmap)
       };
-      localNotificationService.showNotification(
-        0,
-        notify.title,
-        notify.body,
-        notify,
-        options,
-      );
+      if (notify !== undefined) {
+        localNotificationService.showNotification(
+          0,
+          notify.title,
+          notify.body,
+          notify,
+          options,
+        );
+      }
     }
 
     function onOpenNotification(notify) {
       console.log('[App] onOpenNotification: ', notify);
       // onRemoteNotification();
       RootNavigation.push(ScreenTypes.ProductDetail);
-
       alert('Open Notification: ' + notify.body);
     }
 

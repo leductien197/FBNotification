@@ -118,9 +118,9 @@ class FCMService {
       if (remoteMessage) {
         let notification = null;
         if (Platform.OS === 'ios') {
-          notification = remoteMessage.data.notification;
-        } else {
           notification = remoteMessage.notification;
+        } else {
+          notification = remoteMessage.data.notification;
         }
         onNotification(notification);
       }

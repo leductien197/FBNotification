@@ -145,6 +145,12 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
     [[FIRMessaging messaging] appDidReceiveMessage:userInfo];
     completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
   }
+  // {
+  //   NSMutableDictionary * userData = [NSMutableDictionary dictionaryWithDictionary:response.notification.request.content.userInfo];
+  //   [userData setObject:@(1) forKey:"openedInForeground"];
+  //   [RNCPushNotificationIOS didReceiveLocalNotification:userData];
+  //   completionHandler();
+  // }
 
 // End I added
 
