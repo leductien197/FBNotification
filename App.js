@@ -12,21 +12,15 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import appReducers from './src/reducers/index';
 import * as ScreenTypes from './src/navigation/ScreenTypes';
-// import {NavigationContainer} from '@react-navigation/native';
 import * as RootNavigation from './src/navigation/RootNavigation';
 
 function App() {
-  // const navigation = useNavigation();
   const store = createStore(appReducers, applyMiddleware(thunk));
 
   useEffect(() => {
     fcmService.registerAppWithFCM();
     fcmService.register(onRegister, onNotification, onOpenNotification);
-    localNotificationService.configure(
-      onRegister,
-      onNotification,
-      onOpenNotification,
-    );
+    localNotificationService.configure(onOpenNotification);
 
     function onRegister(token) {
       console.log('[App] onRegister: ', token);
