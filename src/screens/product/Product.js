@@ -1,10 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, FlatList, Dimensions} from 'react-native';
 import ItemProduct from '../../components/CpnProduct/ItemProduct';
+import {useDispatch, useSelector} from 'react-redux';
+import * as ScreenTypes from '../../navigation/ScreenTypes';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const screenWidth = Dimensions.get('window').width;
 const scale = screenWidth / 360;
-const Product = ({navigation}) => {
+const Product = props => {
+  // console.log('getItem_Noti', AsyncStorage.getItem('Notify'));
+
+  useEffect(() => {
+    async function loadFirst() {
+      if (props.route.key) {
+        const getNoti_firt = await AsyncStorage.getItem('remoteMessage');
+        const getNoti = await JSON.parse(getNoti_firt);
+
+        if (getNoti) {
+          props.navigation.navigate(ScreenTypes.ProductDetail);
+        }
+        await AsyncStorage.removeItem('remoteMessage');
+      }
+    }
+    loadFirst();
+  });
+  // const colectorStart = useSelector(s => s.product.is_start);
+  const colectorNoti = useSelector(s => s.product.notification);
+  // console.log('colectorStart', colectorStart);
+  console.log('colectorNoti', colectorNoti);
+  console.log('propsPRODUCT', props);
+  const [isLoadFirt, setIsLoadFist] = useState(false);
   const [data, setData] = useState([
     {
       image: require('../../assets/house.png'),
@@ -53,7 +78,11 @@ const Product = ({navigation}) => {
           // ListFooterComponent={_renderFooter}
           renderItem={({item, index}) => {
             return (
-              <ItemProduct item={item} index={index} navigation={navigation} />
+              <ItemProduct
+                item={item}
+                index={index}
+                navigation={props.navigation}
+              />
             );
           }}
         />

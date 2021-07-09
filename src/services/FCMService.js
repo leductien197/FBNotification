@@ -4,6 +4,9 @@ import messaging from '@react-native-firebase/messaging';
 import {Platform} from 'react-native';
 import * as ScreenTypes from '../navigation/ScreenTypes';
 import {useNavigation} from '@react-navigation/native';
+import RootNavigation from '../navigation/RootNavigation';
+import {navigate} from '@react-navigation/routers/lib/typescript/src/CommonActions';
+import AsyncStorage from '@react-native-community/async-storage';
 
 class FCMService {
   register = (onRegister, onNotification, onOpenNotification) => {
@@ -98,15 +101,24 @@ class FCMService {
     messaging()
       .getInitialNotification()
       .then(remoteMessage => {
+        console.log('remoteMessage', remoteMessage);
         console.log(
           '[FCMService] getInitialNotification Notification caused app to open from quit state:',
           remoteMessage,
         );
 
         if (remoteMessage) {
-          const notification = remoteMessage.notification;
-          onOpenNotification(notification);
+          AsyncStorage.setItem(
+            'remoteMessage',
+            JSON.stringify(remoteMessage.notification),
+          );
+
+          // let initialRoute = ScreenTypes.ProductDetail;
+          // const notification = remoteMessage.notification;
+          // onOpenNotification(notification);
+          // RootNavigation.navigate(ScreenTypes.ProductDetail, remoteMessage);
           //  this.removeDeliveredNotification(notification.notificationId)
+          // setInitialRoute(remoteMessage.data.type);
         }
       });
 
@@ -118,9 +130,7 @@ class FCMService {
         if (Platform.OS === 'ios') {
           notification = remoteMessage.notification;
           onNotification(notification);
-          // if (onOpenNotification) {
-          //   onOpenNotification(notification);
-          // }
+          // const clicked = notification.userInteracti
         } else {
           notification = remoteMessage.notification;
           onNotification(notification);

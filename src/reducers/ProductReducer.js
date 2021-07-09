@@ -1,11 +1,14 @@
 import * as Types from '../constants/ActionType';
 
-const initialState = {};
+const initialState = {
+  notification: {},
+  is_start: false,
+};
 
 const product = (state = initialState, action) => {
   switch (action.type) {
-    case Types:
-      return {...state};
+    case Types.GET_IS_START:
+      return {...state, is_start: true};
 
     default:
       return state;

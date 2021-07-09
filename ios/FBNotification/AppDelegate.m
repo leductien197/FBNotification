@@ -6,7 +6,7 @@
 
 // We use these, but you don't have to.
 // #import "RNBootSplash.h"
-// #import <CodePush/CodePush.h>
+#import <CodePush/CodePush.h>
 
 // Start I added
 #import <RNCPushNotificationIOS.h>

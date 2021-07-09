@@ -12,14 +12,18 @@ import * as ScreenTypes from '../navigation/ScreenTypes';
 
 const Stack = createStackNavigator();
 
-function App() {
+function App(props) {
+  // console.log('prop route', props);
   //   const dispatch = useDispatch();
 
   //   const auth = useSelector(state => state.auth);
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator
+        headerMode="none"
+        //  initialRouteName={props.initialRoute}
+      >
         <Stack.Screen name="ModalStack" component={ModalStack} />
       </Stack.Navigator>
     </NavigationContainer>
