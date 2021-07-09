@@ -27,8 +27,8 @@ const Product = props => {
   // const colectorStart = useSelector(s => s.product.is_start);
   const colectorNoti = useSelector(s => s.product.notification);
   // console.log('colectorStart', colectorStart);
-  console.log('colectorNoti', colectorNoti);
-  console.log('propsPRODUCT', props);
+  // console.log('colectorNoti', colectorNoti);
+  // console.log('propsPRODUCT', props);
   const [isLoadFirt, setIsLoadFist] = useState(false);
   const [data, setData] = useState([
     {

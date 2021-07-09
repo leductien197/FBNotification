@@ -130,10 +130,18 @@ class FCMService {
         if (Platform.OS === 'ios') {
           notification = remoteMessage.notification;
           onNotification(notification);
+          AsyncStorage.setItem(
+            'remoteMessage',
+            JSON.stringify(remoteMessage.notification),
+          );
           // const clicked = notification.userInteracti
         } else {
           notification = remoteMessage.notification;
           onNotification(notification);
+          AsyncStorage.setItem(
+            'remoteMessage',
+            JSON.stringify(remoteMessage.notification),
+          );
         }
         // onOpenNotification(notification);
       }
